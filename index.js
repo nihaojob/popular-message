@@ -1,8 +1,45 @@
 class Message {
-    constructor(){
-        this.notification = {}
+    _prefixCls = 'i-message-';
+    _default = {
+        top: 16,
+        duration: 2
+    }
+    info (options) {
+        return this._message('info', options);
+    }
+    success (options) {
+        return this._message('success', options);
+    }
+    warning (options) {
+        return this._message('warning', options);
+    }
+    error (options) {
+        return this._message('error', options);
+    }
+    loading (options) {
+        return this._message('loading', options);
+    }
+    config({ top = this._default.top, duration = this._default.duration}){
+        this._default = {
+            top,
+            duration
+        }
+        this._setContentBoxTop()
+    }
+    destroy () {
+        const boxId = 'messageBox'
+        const contentBox = document.querySelector('#' + boxId)
+        if(contentBox){
+            document.body.removeChild(contentBox)
+        }
+        this._resetDefault()
     }
 
+    /**
+     * @description: 渲染消息
+     * @param {String} type 类型
+     * @param {Object | String} options 详细格式
+     */
     _message(type, options){
         if (typeof options === 'string') {
             options = {
@@ -12,16 +49,28 @@ class Message {
         return this._render(options.content, options.duration, type);
     }
 
-    _render(content = '', duration = 2, type = 'info') {
+    /**
+     * @description: 
+     * @param {String} content 消息内容
+     * @param {Number} duration
+     * @param {String} type
+     */
+    _render(content = '', duration = this._default.duration, type = 'info') {
         const contentBox = this._getContentBox()
         const messageDOM = this._getMsgHtml(type, content)
         contentBox.appendChild(messageDOM);
         this._removeMsgTimer(contentBox, messageDOM, duration)
     }
 
+    /**
+     * @description: 定时删除消息
+     * @param {Element} contentBox 父节点
+     * @param {Element} messageDOM 消息节点
+     * @param {Number} duration 持续时间
+     */
     _removeMsgTimer(contentBox, messageDOM, duration){
         setTimeout(() => {
-            messageDOM.className = 'box animate__animated animate__fadeOutUp'
+            messageDOM.className = `${this._prefixCls}box animate__animated animate__fadeOutUp`
             messageDOM.style.height = 0
         }, duration * 1000);
 
@@ -30,6 +79,11 @@ class Message {
         }, duration * 1000  + 400);
     }
 
+    /**
+     * @description: 获取图标
+     * @param {String} type
+     * @return {String} DOM HTML 字符串
+     */
     _getIcon(type = 'info'){
         const map = {
            info :`<svg style="color:#2db7f5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,19 +105,28 @@ class Message {
         return map[type]
     }
 
+    /**
+     * @description: 获取消息节点
+     * @param {String} type 类型
+     * @param {String} content 消息内容
+     * @return {Element} 节点DOM对象
+     */
     _getMsgHtml(type = 'info', content = ''){
         const messageDOM = document.createElement("div")
-        messageDOM.className = 'box animate__animated animate__fadeInDown'
+        messageDOM.className = `${this._prefixCls}box animate__animated animate__fadeInDown`
         messageDOM.style.height = 36 + 'px'
         messageDOM.innerHTML = `
-                <div class="message" >
+                <div class="${this._prefixCls}message" >
                 ${this._getIcon(type)}
-                <div class="content-text">${content}</div>
+                <div class="${this._prefixCls}content-text">${content}</div>
             </div>
         `
         return messageDOM
     }
-
+    /**
+     * @description: 获取父节点容器
+     * @return {Element} 节点DOM对象
+     */
     _getContentBox(){
         const boxId = 'messageBox'
         if(document.querySelector('#' + boxId)){
@@ -71,32 +134,38 @@ class Message {
         }else{
             const contentBox = document.createElement("div")
             contentBox.id = boxId
+            contentBox.style.top = this._default.top + 'px'
             document.body.appendChild(contentBox)
             return contentBox
         }
     }
 
-    info (options) {
-        return this._message('info', options);
+    /**
+     * @description: 重新设置父节点高度
+     */
+    _setContentBoxTop() {
+        const boxId = 'messageBox'
+        const contentBox = document.querySelector('#' + boxId)
+        if(contentBox){
+            contentBox.style.top = this._default.top + 'px'
+        }
     }
-    success (options) {
-        return this._message('success', options);
-    }
-    warning (options) {
-        return this._message('warning', options);
-    }
-    error (options) {
-        return this._message('error', options);
-    }
-    loading (options) {
-        return this._message('loading', options);
-    }
-    destroy () {
-        this.notification = null;
+    /**
+     * @description: 恢复默认值
+     */
+    _resetDefault() {
+        this._default = {
+            top: 16,
+            duration: 2
+        }
     }
 }
 
-
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = new Message();
+} else {
+    window.$Message = new Message();
+}
 
 
 
