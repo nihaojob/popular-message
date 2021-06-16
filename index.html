@@ -15,6 +15,7 @@
     <button onclick="warning()">warning</button>
     <button onclick="error()">error</button>
     <button onclick="loading()">loading</button>
+    <button onclick="closeBtn()">close</button>
     <button onclick="config()">config</button>
     <button onclick="destroy()">destroy</button>
     <script src="index.js"></script>
@@ -42,6 +43,15 @@
             $message.loading('正在加载中...')
         }
 
+
+        function closeBtn() {
+            $message.info({
+                content:'这是一条带关闭按钮的消息',
+                onClose:() => console.log('关闭'),
+                closable: true,
+                duration: 6
+            })
+        }
         function config() {
             $message.config({
                 top:85,

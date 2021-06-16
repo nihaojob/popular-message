@@ -3,10 +3,10 @@
     position: fixed;
     z-index: 1010;
     width: 100%;
-    top: 16px;
     left: 0;
     color: #515a6e;
     pointer-events: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 .i-message-box {
@@ -29,6 +29,15 @@
 .i-message-message .i-message-content-text,
 svg {
     display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
 }
 
 .i-message-message svg {
@@ -36,6 +45,19 @@ svg {
     height: 16px;
     margin-right: 4px;
     vertical-align: middle;
+}
+
+.i-message-message svg.i-message-btn{
+    cursor: pointer;
+    color: #999;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.i-message-message svg.i-message-btn:hover{
+    color: #444;
 }
 
 svg.loading {
