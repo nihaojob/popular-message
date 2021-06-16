@@ -1,8 +1,10 @@
 class Message {
-    _prefixCls = 'i-message-';
-    _default = {
-        top: 16,
-        duration: 2
+    constructor() {
+        this._prefixCls = 'i-message-';
+        this._default = {
+            top: 16,
+            duration: 2
+        }
     }
     info(options) {
         return this._message('info', options);
@@ -65,7 +67,10 @@ class Message {
         contentBox.appendChild(messageDOM);
         // 删除方法
         const remove = () => this._removeMsgTimer(contentBox, messageDOM, onClose)
-        const removeTimer = setTimeout(remove, duration * 1000);
+        let removeTimer
+        if(duration !== 0){
+            removeTimer = setTimeout(remove, duration * 1000);
+        }
         // 关闭按钮
         closable && this._addClosBtn(messageDOM, remove, removeTimer)
     }
@@ -140,7 +145,7 @@ class Message {
         </svg>`
         const closBtn = new DOMParser().parseFromString(svgStr, 'text/html').body.childNodes[0];
         closBtn.onclick = () => {
-            clearTimeout(removeTimer)
+            removeTimer && clearTimeout(removeTimer)
             remove()
         }
         messageDOM.querySelector(`.${this._prefixCls}message`).appendChild(closBtn)
@@ -187,7 +192,7 @@ class Message {
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = new Message();
 } else {
-    window.$Message = new Message();
+    window.$message = new Message();
 }
 
 

@@ -1,0 +1,29 @@
+{
+  "name": "popular-message",
+  "version": "1.0.3",
+  "description": "轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/nihaojob/popular-message.git",
+  "files": [
+    "index.js",
+    "index.css"
+  ],
+  "keywords": [
+    "message",
+    "notice",
+    "notification"
+  ],
+  "author": {
+    "name": "秦少卫",
+    "email": "nihaojob@163.dom",
+    "url": "https://github.com/nihaojob"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nihaojob/message/issues"
+  },
+  "homepage": "https://github.com/nihaojob/popular-message#readme"
+}

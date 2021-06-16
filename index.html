@@ -21,7 +21,7 @@
     <script src="index.js"></script>
     <script>
 
-        const $message = new Message()
+        // const $message = new Message()
 
         function info() {
             $message.info('这是一条普通的提示')
@@ -49,7 +49,7 @@
                 content:'这是一条带关闭按钮的消息',
                 onClose:() => console.log('关闭'),
                 closable: true,
-                duration: 6
+                duration: 2
             })
         }
         function config() {
