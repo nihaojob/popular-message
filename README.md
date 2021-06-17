@@ -1,15 +1,38 @@
-## 概述
+# popular-message
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
 [体验](https://nihaojob.github.io/message/)
 > 样式与实现参考 iview
 <p align="center"><img width="492" src="./examples.png" /></p>
 
+## 特点
+
+1. 与iview的$mesage组件的API保持一致。
+2. 无任何依赖，非常轻量，200 行左右的源码，压缩后更小。
+3. UI漂亮，参考iview UI样式。
+
+## Install
+1. 直接使用unpkg [在线链接](https://unpkg.com/browse/popular-message@1.0.0/index.js)
+
+```HTML
+<script src="https://unpkg.com/popular-message/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/popular-message/index.css">
+```
+2. 通过npm 或者 yarn安装
+```bash
+$ npm install popular-message
+$ yarn add popular-message
+```
 ## Use
+通过 script 引用，会得到一个全局变量 `$message`。
 
+通过npm安装，需要import导入
 ```js
-const $message = new Message()
+import $message from 'popular-message';
+```
 
+在页面中使用
+```js
 <!-- 设置全局配置 -->
 $message.config({ top:85, duration: 4})
 
@@ -35,11 +58,11 @@ $message.destroy()
 ## API
 ### Message instance
 通过直接调用以下方法来使用：
-- `$Message.info(config)`
-- `$Message.success(config)`
-- `$Message.warning(config)`
-- `$Message.error(config)`
-- `$Message.loading(config)`
+- `$message.info(config)`
+- `$message.success(config)`
+- `$message.warning(config)`
+- `$message.error(config)`
+- `$message.loading(config)`
 
 参数 config 可以是字符串或对象，当为字符串时，直接显示内容，当为对象时，具体说明如下：
 
@@ -51,8 +74,8 @@ $message.destroy()
 |  closable |  是否显示关闭按钮	 |Boolean | false|
 
 另外提供了全局配置和全局销毁的方法：
-- `this.$Message.config(options)`
-- `this.$Message.destroy()`
+- `$message.config(options)`
+- `$message.destroy()`
 
 ```JS
 $Message.config({
@@ -66,3 +89,9 @@ $Message.config({
 |  top |  提示组件距离顶端的距离，单位像素 |Number | 24|
 |  duration |  默认自动关闭的延时，单位秒 |Number | 1.5|
 
+## Author
+秦少卫
+
+nihaojob@163.com
+
+https://juejin.cn/user/3843548383549214/posts

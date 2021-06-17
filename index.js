@@ -190,7 +190,7 @@ class Message {
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = new Message();
 } else {
-    window.$Message = new Message();
+    window.$message = new Message();
 }
 
 
