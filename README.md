@@ -1,8 +1,7 @@
 # popular-message
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
-[体验](https://nihaojob.github.io/message/)
-> 样式与实现参考 iview
+[体验Demo](https://nihaojob.github.io/message/)
 <p align="center"><img width="492" src="./examples.png" /></p>
 
 ## 特点
@@ -29,6 +28,7 @@ $ yarn add popular-message
 通过npm安装，需要import导入
 ```js
 import $message from 'popular-message';
+import 'popular-message/index.css';
 ```
 
 在页面中使用

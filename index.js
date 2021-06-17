@@ -1,8 +1,10 @@
 class Message {
-    _prefixCls = 'i-message-';
-    _default = {
-        top: 16,
-        duration: 2
+    constructor() {
+        this._prefixCls = 'i-message-';
+        this._default = {
+            top: 16,
+            duration: 2
+        }
     }
     info(options) {
         return this._message('info', options);
