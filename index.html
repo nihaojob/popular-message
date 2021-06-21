@@ -5,23 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>message</title>
+    <title>popular-message：轻量级的信息反馈组件</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        div.code {
+            white-space: pre;
+        }
+        button{
+            padding: 0 10px;
+            line-height: 25px;
+        }
+    </style>
+    <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="https://unpkg.com/prismjs@1.23.0/prism.js"></script>
 </head>
 
 <body>
+    <div style="width: 600px; margin:0 auto">
+    <h1>popular-message</h1>
+    <p style="color: darkgray;">轻量级的信息反馈组件，在顶部居中显示，并自动消失。
+        <br />
+        有多种不同的提示状态可选择。
+    </p>
+    <h3>Install</h3>
+    <pre><code class="language-markup">$ yarn add popular-message</code></pre>
+    <h3>Use</h3>
+    <pre><code class="language-js">import $message from 'popular-message';
+import 'popular-message/index.css';</code></pre>
+    <h3>example</h3>
     <button onclick="info()">info</button>
     <button onclick="success()">success</button>
     <button onclick="warning()">warning</button>
     <button onclick="error()">error</button>
     <button onclick="loading()">loading</button>
+    <pre><code class="language-js">$message.info('这是一条普通的提示')
+$message.success('这是一条成功的提示')
+$message.warning('这是一条警告的提示')
+$message.error('这是一条格式错误的提示')
+$message.loading('正在加载中...')</code></pre>
     <button onclick="closeBtn()">close</button>
+    <pre><code class="language-js">$message.info({
+    content:'这是一条带关闭按钮的消息',
+    onClose:() => console.log('关闭'),
+    closable: true,
+    duration: 2
+})</code></pre>
     <button onclick="config()">config</button>
+    <pre><code class="language-js">$message.config({
+    top:85,
+    duration: 4
+})</code></pre>
     <button onclick="destroy()">destroy</button>
+    <pre><code  class="language-js">$message.destroy()</code></pre>
+</div>
     <script src="index.js"></script>
     <script>
-
-        // const $message = new Message()
 
         function info() {
             $message.info('这是一条普通的提示')
@@ -46,15 +84,15 @@
 
         function closeBtn() {
             $message.info({
-                content:'这是一条带关闭按钮的消息',
-                onClose:() => console.log('关闭'),
+                content: '这是一条带关闭按钮的消息',
+                onClose: () => console.log('关闭'),
                 closable: true,
                 duration: 2
             })
         }
         function config() {
             $message.config({
-                top:85,
+                top: 85,
                 duration: 4
             })
         }
