@@ -66,7 +66,7 @@ class Message {
         const contentBox = this._getContentBox()
         contentBox.appendChild(messageDOM);
         // 删除方法
-        const remove = () => this._removeMsgTimer(contentBox, messageDOM, onClose)
+        const remove = () => this._removeMsg(contentBox, messageDOM, onClose)
         let removeTimer
         if(duration !== 0){
             removeTimer = setTimeout(remove, duration * 1000);
@@ -76,12 +76,12 @@ class Message {
     }
 
     /**
-     * @description: 定时删除消息
+     * @description: 删除消息
      * @param {Element} contentBox 父节点
      * @param {Element} messageDOM 消息节点
      * @param {Number} duration 持续时间
      */
-    _removeMsgTimer(contentBox, messageDOM, onClose) {
+    _removeMsg(contentBox, messageDOM, onClose) {
         messageDOM.className = `${this._prefixCls}box animate__animated animate__fadeOutUp`
         messageDOM.style.height = 0
         setTimeout(() => {
