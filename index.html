@@ -15,6 +15,10 @@
             padding: 0 10px;
             line-height: 25px;
         }
+        h1 span{
+            float: right;
+            margin-top: 6px;
+        }
     </style>
     <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
     <script src="https://unpkg.com/prismjs@1.23.0/prism.js"></script>
@@ -22,7 +26,10 @@
 
 <body>
     <div style="width: 600px; margin:0 auto">
-    <h1>popular-message</h1>
+    <h1>popular-message
+        <a class="github-button" href="https://github.com/nihaojob/popular-message" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star nihaojob/popular-message on GitHub">Star</a>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </h1>
     <p style="color: darkgray;">轻量级的信息反馈组件，在顶部居中显示，并自动消失。
         <br />
         有多种不同的提示状态可选择。
@@ -37,7 +44,7 @@
     <h3>Use</h3>
     <pre><code class="language-js">import $message from 'popular-message';
 import 'popular-message/index.css';</code></pre>
-    <h3>example</h3>
+    <h3>Example</h3>
     <button onclick="info()">info</button>
     <button onclick="success()">success</button>
     <button onclick="warning()">warning</button>
