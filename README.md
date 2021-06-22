@@ -4,6 +4,8 @@
 [体验Demo](https://nihaojob.github.io/popular-message)
 <p align="center"><img width="492" src="./examples.png" /></p>
 
+中文 | [English](https://github.com/nihaojob/popular-message/blob/main/README-en.md)
+
 ## 特点
 
 1. 与iview的$mesage组件的API保持一致。
