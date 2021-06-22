@@ -1,10 +1,11 @@
+
+[中文](https://github.com/nihaojob/popular-message/blob/main/README.md) | English
 # popular-message
 A lightweight feedback message appearing at the top of the screen, fading automatically. Has many different options for different situations.
 
 [Demo](https://nihaojob.github.io/popular-message)
 <p align="center"><img width="492" src="./examples.png" /></p>
 
-[中文](https://github.com/nihaojob/popular-message/blob/main/README.md) | English
 
 ## Features
 
