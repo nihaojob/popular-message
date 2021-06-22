@@ -6,7 +6,7 @@ A lightweight feedback message appearing at the top of the screen, fading automa
 
 [中文](https://github.com/nihaojob/popular-message/blob/main/README.md) | English
 
-## 特点
+## Features
 
 1. API design for iview-$mesage。
 2. No dependence，lightweight，200 lines of source code，Smaller after compression。
