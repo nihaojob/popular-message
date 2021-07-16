@@ -2,9 +2,11 @@
   "name": "popular-message",
   "version": "1.0.4",
   "description": "轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulpV": "gulp -v",
+    "build": "gulp"
   },
   "repository": "https://github.com/nihaojob/popular-message.git",
   "files": [
@@ -25,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/nihaojob/message/issues"
   },
-  "homepage": "https://github.com/nihaojob/popular-message#readme"
+  "homepage": "https://github.com/nihaojob/popular-message#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
 }
