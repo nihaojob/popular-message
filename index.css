@@ -1,4 +1,4 @@
-#messageBox {
+.popular-message {
     font-size: 14px;
     position: fixed;
     z-index: 1010;

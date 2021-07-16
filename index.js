@@ -5,6 +5,7 @@ class Message {
             top: 16,
             duration: 2
         }
+        this._contentBoxId = this._getContentBoxId()
     }
     info(options) {
         return this._message('info', options);
@@ -29,8 +30,7 @@ class Message {
         this._setContentBoxTop()
     }
     destroy() {
-        const boxId = 'messageBox'
-        const contentBox = document.querySelector('#' + boxId)
+        const contentBox = document.getElementById(this._contentBoxId)
         if (contentBox) {
             document.body.removeChild(contentBox)
         }
@@ -156,24 +156,33 @@ class Message {
      * @return {Element} 节点DOM对象
      */
     _getContentBox() {
-        const boxId = 'messageBox'
-        if (document.querySelector('#' + boxId)) {
-            return document.querySelector('#' + boxId)
-        } else {
+        return document.getElementById(this._contentBoxId) || (() => {
             const contentBox = document.createElement("div")
-            contentBox.id = boxId
+            contentBox.id = this._contentBoxId
+            // 因为 id 是随机的，所以 css 里需要另一个固定的选择器 .popular-message
+            contentBox.classList.add('popular-message')
             contentBox.style.top = this._default.top + 'px'
             document.body.appendChild(contentBox)
             return contentBox
-        }
+        })()
+    }
+
+    /**
+     * @description: 获取全局唯一的 contentBoxId
+     * @return {String} 唯一的 contentBoxId
+     */
+    _getContentBoxId() {
+        const id = 'messageBox' + Math.random()
+        return document.getElementById(id)
+          ? this._getContentBoxId()
+          : id
     }
 
     /**
      * @description: 重新设置父节点高度
      */
     _setContentBoxTop() {
-        const boxId = 'messageBox'
-        const contentBox = document.querySelector('#' + boxId)
+        const contentBox = document.getElementById(this._contentBoxId)
         if (contentBox) {
             contentBox.style.top = this._default.top + 'px'
         }
