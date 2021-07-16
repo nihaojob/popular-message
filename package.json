@@ -1,6 +1,6 @@
 {
   "name": "popular-message",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。",
   "main": "./src/index.js",
   "scripts": {
