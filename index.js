@@ -3,7 +3,8 @@ class Message {
         this._prefixCls = 'i-message-';
         this._default = {
             top: 16,
-            duration: 2
+            duration: 2,
+            singleton: false
         }
         this._contentBoxId = this._getContentBoxId()
     }
@@ -22,10 +23,11 @@ class Message {
     loading(options) {
         return this._message('loading', options);
     }
-    config({ top = this._default.top, duration = this._default.duration }) {
+    config({ top = this._default.top, duration = this._default.duration, singleton = this._default.singleton }) {
         this._default = {
             top,
-            duration
+            duration,
+            singleton
         }
         this._setContentBoxTop()
     }
@@ -64,6 +66,7 @@ class Message {
         const messageDOM = this._getMsgHtml(type, content, closable)
         // 插入父容器
         const contentBox = this._getContentBox()
+        this._default.singleton && (contentBox.innerHTML = '')
         contentBox.appendChild(messageDOM);
         // 删除方法
         const remove = () => this._removeMsg(contentBox, messageDOM, onClose)
@@ -85,7 +88,7 @@ class Message {
         messageDOM.className = `${this._prefixCls}box animate__animated animate__fadeOutUp`
         messageDOM.style.height = 0
         setTimeout(() => {
-            contentBox.removeChild(messageDOM)
+            !this._default.singleton && contentBox.removeChild(messageDOM)
             onClose()
         }, 400);
     }

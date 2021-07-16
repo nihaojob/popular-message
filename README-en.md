@@ -91,6 +91,7 @@ $Message.config({
 |---    |---   |--- | ---   |
 |  top |  Prompt's distance from top, in pixels.	 |Number | 24|
 |  duration |  Default time before prompt dismisses, in seconds.	 |Number | 1.5|
+|  singleton |  Singleton Pattern	 |Boolean | false|
 
 ## Author
 秦少卫
