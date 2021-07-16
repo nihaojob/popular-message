@@ -27,15 +27,12 @@ function minHtml() {
   .pipe(gulp.dest(dist))
 }
 
-function defaultTask(cb) {
-  gulp.watch(['./src/*.js','./src/*.css','./src/*.html' ], function(cb) {
-    minJS()
-    minCSS()
-    minHtml()
-    cb()
-  });
-}
-
+const defaultTask = gulp.task('default', function(done) {
+  minJS()
+  minCSS()
+  minHtml()
+  done()
+});
 
 
 exports.default = defaultTask

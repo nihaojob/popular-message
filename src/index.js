@@ -206,8 +206,3 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 } else {
     window.$message = new Message();
 }
-
-
-
-
-
