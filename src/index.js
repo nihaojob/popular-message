@@ -4,7 +4,8 @@ class Message {
         this._default = {
             top: 16,
             duration: 2,
-            singleton: false
+            singleton: false,
+            dangerUseHtml: false
         }
         this._contentBoxId = this._getContentBoxId()
     }
@@ -50,7 +51,7 @@ class Message {
                 content: options
             };
         }
-        return this._render(options.content, options.duration, type, options.onClose, options.closable);
+        return this._render(options.content, options.duration, type, options.onClose, options.closable, options.dangerUseHtml);
     }
 
     /**
@@ -60,10 +61,10 @@ class Message {
      * @param {String} type 消息类型
      */
     _render(content = '', duration = this._default.duration, type = 'info',
-        onClose = () => { }, closable = false
+        onClose = () => { }, closable = false, dangerUseHtml = this._default.dangerUseHtml
     ) {
         // 获取节点信息
-        const messageDOM = this._getMsgHtml(type, content, closable)
+        const messageDOM = this._getMsgHtml(type, content, dangerUseHtml)
         // 插入父容器
         const contentBox = this._getContentBox()
         this._default.singleton && (contentBox.innerHTML = '')
@@ -119,13 +120,23 @@ class Message {
         return map[type]
     }
 
+    _htmlEcape(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+    }
+
     /**
      * @description: 获取消息节点
      * @param {String} type 类型
      * @param {String} content 消息内容
      * @return {Element} 节点DOM对象
      */
-    _getMsgHtml(type, content) {
+    _getMsgHtml(type, content, dangerUseHtml) {
+        !dangerUseHtml && (content = this._htmlEcape(content))
         const messageDOM = document.createElement("div")
         messageDOM.className = `${this._prefixCls}box animate__animated animate__fadeInDown`
         messageDOM.style.height = 36 + 'px'
