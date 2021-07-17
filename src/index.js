@@ -8,20 +8,20 @@ class Message {
         }
         this._contentBoxId = this._getContentBoxId()
     }
-    info(options) {
-        return this._message('info', options);
+    info() {
+        return this._message('info', arguments);
     }
-    success(options) {
-        return this._message('success', options);
+    success() {
+        return this._message('success', arguments);
     }
-    warning(options) {
-        return this._message('warning', options);
+    warning() {
+        return this._message('warning', arguments);
     }
-    error(options) {
-        return this._message('error', options);
+    error() {
+        return this._message('error', arguments);
     }
-    loading(options) {
-        return this._message('loading', options);
+    loading() {
+        return this._message('loading', arguments);
     }
     config({ top = this._default.top, duration = this._default.duration, singleton = this._default.singleton }) {
         this._default = {
@@ -44,11 +44,10 @@ class Message {
      * @param {String} type 类型
      * @param {Object | String} options 详细格式
      */
-    _message(type, options) {
-        if (typeof options === 'string') {
-            options = {
-                content: options
-            };
+    _message(type, args) {
+        let options = { ...args[1] }
+        if (typeof args[0] === 'string') {
+            options.content = args[0]
         }
         return this._render(options.content, options.duration, type, options.onClose, options.closable);
     }

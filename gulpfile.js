@@ -3,21 +3,22 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     htmlmin = require('gulp-htmlmin')
 
-const src = './src/',
-    dist = './example/'
+const src = './src/', dist = './docs/'
 
 
 function minJS() {
   return gulp.src(src+'index.js')
   .pipe(uglify())
-  .pipe(gulp.dest(dist));
+  .pipe(gulp.dest(dist))
+  .pipe(gulp.dest('./'));
 }
 
 
 function minCSS() {
   return gulp.src(src+'index.css')
   .pipe(mincss())
-  .pipe(gulp.dest(dist));
+  .pipe(gulp.dest(dist))
+  .pipe(gulp.dest('./'));
 }
 
 

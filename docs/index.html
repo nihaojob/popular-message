@@ -13,11 +13,17 @@ import 'popular-message/index.css';</code></pre><h3>Example</h3><button onclick=
 $message.success('这是一条成功的提示')
 $message.warning('这是一条警告的提示')
 $message.error('这是一条格式错误的提示')
-$message.loading('正在加载中...')</code></pre><button onclick="closeBtn()">close</button><pre><code class="language-js">$message.info({
-    content:'这是一条带关闭按钮的消息',
+$message.loading('正在加载中...')</code></pre><button onclick="closeBtn()">close</button> <button onclick="closeBtnByHand()">手动close</button><pre><code class="language-js">$message.info(content:'这是一条带关闭按钮的消息',
+{
     onClose:() => console.log('关闭'),
     closable: true,
     duration: 2
+})
+$message.info(content:'这是一条手动关闭按钮的消息',
+{
+    onClose:() => console.log('关闭'),
+    closable: true,
+    duration: 0
 })</code></pre><button onclick="config()">config</button><pre><code class="language-js">$message.config({
     top:85,
     duration: 4
@@ -44,10 +50,20 @@ $message.info('这是一条单例的通知的消息')</code></pre></div><script 
             $message.loading('正在加载中...')
         }
 
+        function closeBtnByHand() {
+            $message.info(
+                '这是一条手动带关闭按钮的消息!!!',
+                {
+                onClose: () => console.log('关闭'),
+                closable: true,
+                duration: 0
+            })
+        }
 
         function closeBtn() {
-            $message.info({
-                content: '这是一条带关闭按钮的消息',
+            $message.info(
+                '这是一条带关闭按钮的消息!!!',
+                {
                 onClose: () => console.log('关闭'),
                 closable: true,
                 duration: 2
