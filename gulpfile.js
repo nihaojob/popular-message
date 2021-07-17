@@ -4,7 +4,7 @@ const gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin')
 
 const src = './src/',
-    dist = './example/'
+    dist = './docs/'
 
 
 function minJS() {
