@@ -75,6 +75,8 @@ $message.destroy()
 |  duration |  自动关闭的延时，单位秒，不关闭可以写 0 |Number | 2|
 |  onClose |  关闭时的回调	 |Function | -|
 |  closable |  是否显示关闭按钮	 |Boolean | false|
+|  dangerUseHtml |  是否将 content属性作为 HTML 片段处理	 |Boolean | false|
+
 
 另外提供了全局配置和全局销毁的方法：
 - `$message.config(options)`
