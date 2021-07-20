@@ -2,8 +2,6 @@
 # popular-message
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
-> 重要：请使用1.0.3稳定版本。
-
 [体验Demo](https://nihaojob.github.io/popular-message)
 <p align="center"><img width="492" src="./examples.png" /></p>
 
