@@ -4,8 +4,8 @@
 
 [![travis-ci](https://api.travis-ci.com/nihaojob/popular-message.svg?branch=main)](https://travis-ci.com/github/nihaojob/popular-message)
 [![Coverage Status](https://coveralls.io/repos/github/nihaojob/popular-message/badge.svg)](https://coveralls.io/github/nihaojob/popular-message)
-[![license](https://img.shields.io/github/license/nihaojob/popular-message)]()
-[![license](https://img.shields.io/github/release/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/releases)
+[![license](https://img.shields.io/github/license/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/blob/main/LICENSE)
+[![release](https://img.shields.io/github/release/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/releases)
 
 
 

@@ -1,9 +1,9 @@
-中文 | [English](https://github.com/nihaojob/popular-message/blob/main/README-en.md)
+中文 | [English](https://github.com/nihaojob/popular-message/blob/main/README.md)
 # popular-message
 [![travis-ci](https://api.travis-ci.com/nihaojob/popular-message.svg?branch=main)](https://travis-ci.com/github/nihaojob/popular-message)
 [![Coverage Status](https://coveralls.io/repos/github/nihaojob/popular-message/badge.svg)](https://coveralls.io/github/nihaojob/popular-message)
-[![license](https://img.shields.io/github/license/nihaojob/popular-message)]()
-[![license](https://img.shields.io/github/release/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/releases)
+[![license](https://img.shields.io/github/license/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/blob/main/LICENSE)
+[![release](https://img.shields.io/github/release/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/releases)
 
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
