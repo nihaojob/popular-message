@@ -1,84 +1,91 @@
-中文 | [English](https://github.com/nihaojob/popular-message/blob/main/README-en.md)
+
+[中文](https://github.com/nihaojob/popular-message/blob/main/README.md) | English
 # popular-message
+
+[![travis-ci](https://api.travis-ci.com/nihaojob/popular-message.svg?branch=main)](https://travis-ci.com/github/nihaojob/popular-message)
 [![Coverage Status](https://coveralls.io/repos/github/nihaojob/popular-message/badge.svg)](https://coveralls.io/github/nihaojob/popular-message)
+[![license](https://img.shields.io/github/license/nihaojob/popular-message)]()
+[![license](https://img.shields.io/github/release/nihaojob/popular-message)](https://github.com/nihaojob/popular-message/releases)
 
-轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。
 
-[体验Demo](https://nihaojob.github.io/popular-message)
+
+
+A lightweight feedback message appearing at the top of the screen, fading automatically. Has many different options for different situations.
+
+[Demo](https://nihaojob.github.io/popular-message)
 <p align="center"><img width="492" src="./examples.png" /></p>
 
 
+## Features
 
-## 特点
-
-1. 与iview的$mesage组件的API保持一致。
-2. 无任何依赖，非常轻量，200 行左右的源码，压缩后更小。
-3. UI漂亮，参考iview UI样式。
+1. API design for iview-$mesage。
+2. No dependence，lightweight，200 lines of source code，Smaller after compression。
+3. UI Beautiful，Reference iview UI styles。
 
 ## Install
-1. 直接使用unpkg [在线链接](https://unpkg.com/browse/popular-message@1.0.0/index.js)
+1. use unpkg cdn [link](https://unpkg.com/browse/popular-message@1.0.0/index.js)
 
 ```HTML
 <script src="https://unpkg.com/popular-message/index.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/popular-message/index.css">
 ```
-2. 通过npm 或者 yarn安装
+2.use npm or yarn install
 ```bash
 $ npm install popular-message
 $ yarn add popular-message
 ```
 ## Use
-通过 script 引用，会得到一个全局变量 `$message`。
+use script，get global variable `$message`。
 
-通过npm安装，需要import导入
+use npm install，need import The module
 ```js
 import $message from 'popular-message';
 import 'popular-message/index.css';
 ```
 
-在页面中使用
+use in page
 ```js
-<!-- 设置全局配置 -->
+<!-- global configuration -->
 $message.config({ top:85, duration: 4})
 
-<!-- 普通调用 -->
-$message.info('这是一条普通的提示')
-$message.success('这是一条成功的提示')
-$message.warning('这是一条警告的提示')
-$message.error('这是一条格式错误的提示')
-$message.loading('正在加载中...')
+<!-- types -->
+$message.info('this is a info message')
+$message.success('this is a success message')
+$message.warning('this is a info warning message')
+$message.error('this is a info error message')
+$message.loading('loading...')
 
-<!-- 关闭按钮 -->
+<!-- onClose -->
 $message.info({
-    content:'这是一条带关闭按钮的消息',
-    onClose:() => console.log('关闭'),
+    content:'this is message can close',
+    onClose:() => console.log('close'),
     closable: true,
     duration: 6
 })
 
-<!-- 注销 -->
+<!-- destroy -->
 $message.destroy()
 ```
 
 ## API
 ### Message instance
-通过直接调用以下方法来使用：
+This component can be used with the following static methods:
 - `$message.info(config)`
 - `$message.success(config)`
 - `$message.warning(config)`
 - `$message.error(config)`
 - `$message.loading(config)`
 
-参数 config 可以是字符串或对象，当为字符串时，直接显示内容，当为对象时，具体说明如下：
+Parameter config can be string or object. When string, the content will be directly displayed, when object, the detail usage is explained below:
 
-|  属性 | 说明  | 类型|  默认值|
+|  Property | Description  | Type|  Default|
 |---    |---   |--- | ---   |
-|  content |  提示内容 |String | -|
-|  duration |  自动关闭的延时，单位秒，不关闭可以写 0 |Number | 2|
-|  onClose |  关闭时的回调	 |Function | -|
-|  closable |  是否显示关闭按钮	 |Boolean | false|
+|  content |  Prompt's message content	 |String | -|
+|  duration |  Time before prompt dismisses, in seconds. Use 0 to not dismiss	 |Number | 2|
+|  onClose |  Function to be called after the prompt is closed		 |Function | -|
+|  closable |  Whether to show a close button.		 |Boolean | false|
 
-另外提供了全局配置和全局销毁的方法：
+Methods for global configuration and disposal are also provided:
 - `$message.config(options)`
 - `$message.destroy()`
 
@@ -89,15 +96,12 @@ $Message.config({
 });
 ```
 
-|  属性 | 说明  | 类型|  默认值|
+|  Property | Description  | Type|  Default |
 |---    |---   |--- | ---   |
-|  top |  提示组件距离顶端的距离，单位像素 |Number | 24|
-|  duration |  默认自动关闭的延时，单位秒 |Number | 1.5|
-|  singleton |  消息框单例模式	 |Boolean | false|
+|  top |  Prompt's distance from top, in pixels.	 |Number | 24|
+|  duration |  Default time before prompt dismisses, in seconds.	 |Number | 1.5|
+|  singleton |  Singleton Pattern	 |Boolean | false|
 
-## Author
-秦少卫
+## License
+Licensed under the MIT License.
 
-nihaojob@163.com
-
-https://juejin.cn/user/3843548383549214/posts
