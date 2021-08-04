@@ -1,5 +1,5 @@
 
-[中文](https://github.com/nihaojob/popular-message/blob/main/README.md) | English
+[中文](https://github.com/nihaojob/popular-message/blob/main/README-zh.md) | English
 # popular-message
 
 [![travis-ci](https://api.travis-ci.com/nihaojob/popular-message.svg?branch=main)](https://travis-ci.com/github/nihaojob/popular-message)
