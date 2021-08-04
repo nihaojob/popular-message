@@ -1,6 +1,8 @@
 
 [中文](https://github.com/nihaojob/popular-message/blob/main/README.md) | English
 # popular-message
+[![Coverage Status](https://coveralls.io/repos/github/nihaojob/popular-message/badge.svg)](https://coveralls.io/github/nihaojob/popular-message)
+
 A lightweight feedback message appearing at the top of the screen, fading automatically. Has many different options for different situations.
 
 [Demo](https://nihaojob.github.io/popular-message)
