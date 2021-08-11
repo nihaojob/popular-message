@@ -84,6 +84,7 @@ Parameter config can be string or object. When string, the content will be direc
 |  duration |  Time before prompt dismisses, in seconds. Use 0 to not dismiss	 |Number | 2|
 |  onClose |  Function to be called after the prompt is closed		 |Function | -|
 |  closable |  Whether to show a close button.		 |Boolean | false|
+|  dangerUseHtml |  whether message is treated as HTML string	 |Boolean | false|
 
 Methods for global configuration and disposal are also provided:
 - `$message.config(options)`

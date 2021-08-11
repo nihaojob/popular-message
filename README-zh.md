@@ -97,6 +97,6 @@ $Message.config({
 |  top |  提示组件距离顶端的距离，单位像素 |Number | 24|
 |  duration |  默认自动关闭的延时，单位秒 |Number | 1.5|
 |  singleton |  消息框单例模式	 |Boolean | false|
-
+|  dangerUseHtml |  是否将 content属性作为 HTML 片段处理	 |Boolean | false|
 ## License
 Licensed under the MIT License.

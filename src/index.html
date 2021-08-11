@@ -81,6 +81,13 @@ $message.info('这是一条手动关闭按钮的消息',{
     singleton:true
 })
 $message.info('这是一条单例的通知的消息')</code></pre>
+    <button onclick="safeUseHtml()">defaultDnagerUseHtml</button>
+    <button onclick="dangerUseHtml()">dangerUseHtml</button>
+    <pre><code  class="language-js">$message.info({
+    content: '这是一条的通知的消息',
+    dangerUseHtml:true
+})
+$message.info('这是一条普通的提示')</code></pre>
 </div>
     <script src="index.js"></script>
     <script>
@@ -140,12 +147,16 @@ $message.info('这是一条单例的通知的消息')</code></pre>
                 singleton:true
             })
         }
-        function singleton() {
+        function dangerUseHtml() { 
             $message.warning({
-                content: '这是一条单例的通知的消息',
-                singleton: true
+                content: '这是一条的通知的消息 <span style="color:red">红色</span><iframe style="width:0;height:0" src="javascript:alert()"><\/iframe>',
+                dangerUseHtml: true
             })
         }
+        function safeUseHtml() { 
+            $message.warning('这是一条的通知的消息 <span style="color:red">红色</span><iframe style="width:0;height:0" src="javascript:alert()"><\/iframe>')
+        }
+
 
     </script>
 </body>
