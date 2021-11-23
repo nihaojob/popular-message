@@ -56,8 +56,7 @@ $message.error('this is a info error message')
 $message.loading('loading...')
 
 <!-- onClose -->
-$message.info({
-    content:'this is message can close',
+$message.info('this is message can close', {
     onClose:() => console.log('close'),
     closable: true,
     duration: 6
@@ -80,7 +79,6 @@ Parameter config can be string or object. When string, the content will be direc
 
 |  Property | Description  | Type|  Default|
 |---    |---   |--- | ---   |
-|  content |  Prompt's message content	 |String | -|
 |  duration |  Time before prompt dismisses, in seconds. Use 0 to not dismiss	 |Number | 2|
 |  onClose |  Function to be called after the prompt is closed		 |Function | -|
 |  closable |  Whether to show a close button.		 |Boolean | false|
