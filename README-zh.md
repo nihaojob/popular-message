@@ -52,8 +52,7 @@ $message.error('这是一条格式错误的提示')
 $message.loading('正在加载中...')
 
 <!-- 关闭按钮 -->
-$message.info({
-    content:'这是一条带关闭按钮的消息',
+$message.info('这是一条带关闭按钮的消息', {
     onClose:() => console.log('关闭'),
     closable: true,
     duration: 6
