@@ -69,11 +69,11 @@ $message.destroy()
 ## API
 ### Message instance
 This component can be used with the following static methods:
-- `$message.info(config)`
-- `$message.success(config)`
-- `$message.warning(config)`
-- `$message.error(config)`
-- `$message.loading(config)`
+- `$message.info(msgStr, config)`
+- `$message.success(msgStr, config)`
+- `$message.warning(msgStr, config)`
+- `$message.error(msgStr, config)`
+- `$message.loading(msgStr, config)`
 
 Parameter config can be string or object. When string, the content will be directly displayed, when object, the detail usage is explained below:
 
