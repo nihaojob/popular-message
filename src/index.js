@@ -54,7 +54,6 @@ class Message {
         // 对象模式
         if(args.length === 1 && typeof args[0] === 'object'){
             options = args[0]
-            console.log(options)
         }
         return this._render(options.content, options.duration, type, options.onClose, options.closable, options.dangerUseHtml);
     }

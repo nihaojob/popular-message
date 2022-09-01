@@ -30,6 +30,20 @@ describe('图标类型与颜色', () => {
 });
 
 
+describe('对象类型', () => {
+
+    test('content', () => {
+        $msg.destroy()
+        $msg.info({
+            content: '对象文本'
+        })
+        const boxDom = document.querySelector('.popular-message').innerHTML
+        expect(boxDom.includes('对象文本')).toBe(true);
+    });
+
+});
+
+
 describe('图标类型与颜色', () => {
     test('info', () => {
         const iconStr = $msg._getIcon('info')
