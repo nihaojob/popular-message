@@ -65,11 +65,11 @@ $message.destroy()
 ## API
 ### Message instance
 通过直接调用以下方法来使用：
-- `$message.info(msgStr, config)`
-- `$message.success(msgStr, config)`
-- `$message.warning(msgStr, config)`
-- `$message.error(msgStr, config)`
-- `$message.loading(msgStr, config)`
+- `$message.info(config)`
+- `$message.success(config)`
+- `$message.warning(config)`
+- `$message.error(config)`
+- `$message.loading(config)`
 
 参数 config 可以是字符串或对象，当为字符串时，直接显示内容，当为对象时，具体说明如下：
 

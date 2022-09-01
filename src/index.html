@@ -55,6 +55,12 @@ $message.success('这是一条成功的提示')
 $message.warning('这是一条警告的提示')
 $message.error('这是一条格式错误的提示')
 $message.loading('正在加载中...')</code></pre>
+
+
+<button onclick="objectFn()">object</button>
+<pre><code class="language-js">$message.info({
+    content: '我是字符串消息'
+})</code></pre>
     <button onclick="closeBtn()">close</button>
     <button onclick="closeBtnByHand()">手动close</button>
     <pre><code class="language-js">$message.info('这是一条带关闭按钮的消息',{
@@ -120,6 +126,12 @@ $message.info(htmlStr,{
 
         function loading() {
             $message.loading('正在加载中...')
+        }
+
+        function objectFn() {
+            $message.info({
+                content: '我是字符串消息'
+            })
         }
 
         function closeBtnByHand() {
